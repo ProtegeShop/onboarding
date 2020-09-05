@@ -2,6 +2,13 @@
 // colors for buttons h1,h2,h3,p, text
 $color-darkFade: #282b28;
 $color-greyFade: #bebebe;
+$box-shadow: 0px 3px 6px #00000029;
+$inner-padding: 8px;
+$outer-margin: 8px 8px 8px 0;
+$outer-col-margin: 0 16px 16px 0;
+$padding-top: 16px;
+$half-radius: 12px;
+$full-radius: 124px;
 
 * {
     color: $color-darkFade;
@@ -9,7 +16,7 @@ $color-greyFade: #bebebe;
 }
 
 ion-item {
-    padding-top: 16%;
+    padding-top: 6%;
 }
 
 p {
@@ -36,6 +43,90 @@ h1 {
     line-height: 60px;
 }
 
+.single-selection {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+
+    ion-button {
+        border: 2px solid $color-darkFade;
+        border-radius: 12px;
+        font-weight: 900;
+        font-size: 30px;
+        height: 100%;
+        width: fit-content;
+        padding: $inner-padding;
+        margin: $outer-margin;
+    }
+
+    ion-button.selected {
+        background-color: $color-darkFade;
+        color: #ffffff;
+    }
+}
+
+.multi-selection {
+    padding-top: $padding-top;
+    ion-col {
+        border-radius: 12px;
+        box-shadow: $box-shadow;
+
+        min-height: 110px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        margin: $outer-col-margin;
+        padding: $inner-padding;
+
+        ion-text {
+            font-size: 15px;
+            font-weight: 800;
+            text-align: center;
+
+            // you remove this to make the text stretch
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        img {
+            max-width: 54px;
+            max-height: 54px;
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    ion-col.selection {
+        border: 2px solid $color-darkFade;
+    }
+}
+
+.multi-selection-text-only {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 45px;
+    margin-left: 6px;
+    padding-top: $padding-top;
+
+    ion-button {
+        border-radius: 12px;
+        padding: $inner-padding;
+        margin: $outer-margin;
+        min-height: 45px;
+        font-size: 15px;
+    }
+
+    ion-button.selected {
+        background-color: $color-darkFade;
+        color: #ffffff;
+    }
+}
+
+// footer  starts here
 ion-footer {
     .getStartedButton {
         border: 1px solid $color-greyFade;
@@ -62,4 +153,63 @@ ion-footer {
             background-color: $color-greyFade;
         }
     }
+}
+
+.rounded {
+    border-radius: 124px !important;
+}
+
+.border {
+    border: 1px solid #d2d2d2;
+}
+
+.shadow {
+    box-shadow: $box-shadow;
+}
+
+.half-radius {
+    border-radius: $half-radius !important;
+}
+
+.full-radius {
+    border-radius: $full-radius !important;
+}
+
+ion-button {
+    font-weight: 600;
+}
+
+.large-button {
+    padding: 8px 16px 0 0;
+    min-height: 70px !important;
+
+    img {
+        max-height: 27px;
+        max-width: 27px;
+        margin: 16px;
+    }
+
+    ion-text {
+        margin-right: 16px;
+    }
+}
+
+.large-button.selected {
+    background: $color-darkFade;
+
+    ion-text {
+        color: #ffffff;
+    }
+
+    img {
+        filter: invert(100%) sepia(67%) saturate(10%) hue-rotate(218deg) brightness(103%) contrast(100%);
+    }
+}
+
+ion-input {
+    border: 1px solid $color-darkFade;
+    border-radius: 12px;
+    min-height: 60px;
+    margin-top: 16px;
+    padding: 16px!important;
 }
