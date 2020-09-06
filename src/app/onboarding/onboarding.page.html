@@ -25,11 +25,9 @@
 
         <!-- flexible options-->
         <ion-buttons class="single-selection">
-          <ion-button class="selected"> Yes </ion-button>
-          <ion-button> No </ion-button>
-          <ion-button> No </ion-button>
-          <ion-button> No </ion-button>
-          <ion-button> No </ion-button>
+          <ion-button (click)='onSingleSelect("yes")' [ngClass]="{'selected':singleSelect == 'yes'}"> Yes
+          </ion-button>
+          <ion-button (click)='onSingleSelect("no")' [ngClass]="{'selected':singleSelect == 'no'}"> No </ion-button>
         </ion-buttons>
       </ion-label>
     </ion-item>
@@ -45,26 +43,10 @@
         <ion-grid class="multi-selection">
           <ion-row>
             <!-- options -->
-            <ion-col size="4" button class="ion-activatable ripple-parent shadow">
-              <img src="../../assets/temp/tomato.jpg">
-              <ion-text>
-                Tomato
-              </ion-text>
-
-              <ion-ripple-effect></ion-ripple-effect>
-            </ion-col>
-
-            <ion-col size="4" button class="ion-activatable ripple-parent selected shadow">
-              <img src="../../assets/temp/16571.png">
-              <ion-text> Orange Juice asdasdsad</ion-text>
-
-              <ion-ripple-effect></ion-ripple-effect>
-            </ion-col>
-
-            <ion-col size="4" class="ion-activatable ripple-parent selected shadow">
-              <img src="../../assets/temp/6739.png">
-              <ion-text> Apple</ion-text>
-
+            <ion-col size="4" button class="ion-activatable ripple-parent shadow" *ngFor="let option of options"
+              [ngClass]="{'selected':multiSelect.includes(option) }" (click)="onMultiSelect(option)">
+              <img [src]="option.img">
+              <ion-text> {{option.name}}</ion-text>
               <ion-ripple-effect></ion-ripple-effect>
             </ion-col>
           </ion-row>
@@ -82,14 +64,8 @@
         <p>To help us create better experience, please select one or more product.</p>
 
         <ion-buttons class="multi-selection-text-only">
-          <ion-button class="shadow shadow"> Tomoto </ion-button>
-          <ion-button class="shadow shadow"> Apple </ion-button>
-          <ion-button class="selected"> Orange </ion-button>
-          <ion-button class="shadow"> Painting </ion-button>
-          <ion-button class="shadow"> Sky Diving </ion-button>
-          <ion-button class="shadow"> Cheese </ion-button>
-          <ion-button class="shadow"> Eggplant </ion-button>
-          <ion-button class="selected shadow"> Chess </ion-button>
+          <ion-button class="shadow" [ngClass]="{'selected':multiSelect2.includes(option) }"
+            *ngFor="let option of options2" (click)="onMultiSelect2(option)"> {{option.name}}</ion-button>
         </ion-buttons>
       </ion-label>
     </ion-item>
@@ -103,14 +79,8 @@
         <p>To help us create better experience, please select one or more product.</p>
 
         <ion-buttons class="multi-selection-text-only rounded">
-          <ion-button class="rounded border"> Tomoto </ion-button>
-          <ion-button class="rounded border"> Apple </ion-button>
-          <ion-button class="rounded selected border"> Orange </ion-button>
-          <ion-button class=" rounded border"> Painting </ion-button>
-          <ion-button class="rounded border"> Sky Diving </ion-button>
-          <ion-button class="rounded border"> Cheese </ion-button>
-          <ion-button class="rounded border"> Eggplant </ion-button>
-          <ion-button class="rounded border selected"> Chess </ion-button>
+          <ion-button class="rounded border" [ngClass]="{'selected':multiSelect2.includes(option) }"
+            *ngFor="let option of options2" (click)="onMultiSelect2(option)"> {{option.name}}</ion-button>
         </ion-buttons>
       </ion-label>
     </ion-item>
@@ -124,14 +94,8 @@
         <p>To help us create better experience, please select one or more product.</p>
 
         <ion-buttons class="multi-selection-text-only rounded">
-          <ion-button class="rounded border half-radius"> Tomoto </ion-button>
-          <ion-button class="rounded border half-radius"> Apple </ion-button>
-          <ion-button class="rounded selected border half-radius"> Orange </ion-button>
-          <ion-button class=" rounded border half-radius"> Painting </ion-button>
-          <ion-button class="rounded border half-radius"> Sky Diving </ion-button>
-          <ion-button class="rounded border half-radius"> Cheese </ion-button>
-          <ion-button class="rounded border half-radius"> Eggplant </ion-button>
-          <ion-button class="rounded border selected half-radius"> Chess </ion-button>
+          <ion-button class="rounded border half-radius" [ngClass]="{'selected':multiSelect2.includes(option) }"
+            *ngFor="let option of options2" (click)="onMultiSelect2(option)"> {{option.name}}</ion-button>
         </ion-buttons>
       </ion-label>
     </ion-item>
@@ -151,14 +115,13 @@
         <ion-text><strong>You are looking for,</strong></ion-text>
 
         <ion-buttons class="multi-selection-text-only">
-          <ion-button class="rounded border half-radius large-button">
-            <img src="../../assets/temp/pen.svg">
-            <ion-text>Designs</ion-text>
-          </ion-button>
 
-          <ion-button class="rounded border half-radius large-button selected">
-            <img src="../../assets/temp/project.svg">
-            <ion-text>Projects</ion-text>
+          <ion-button class="rounded border half-radius large-button"
+            [ngClass]="{'selected':multiSelect3.includes(option) }" *ngFor="let option of options3"
+            (click)="onMultiSelect3(option)">
+
+            <img [src]="option.img">
+            <ion-text>{{option.name}}</ion-text>
           </ion-button>
         </ion-buttons>
       </ion-label>
