@@ -1,174 +1,190 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="end" mode="md">
-      <ion-button>Skip</ion-button>
+      <ion-button (click)="onSkip()">Skip</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <!-- Entry-->
-  <ion-item lines="none">
-    <ion-label>
-      <h2>Welcome,</h2>
-      <h1>Let us set you up</h1>
-    </ion-label>
-  </ion-item>
+  <section #section>
+    <ion-item lines="none">
+      <ion-label>
+        <h2>Welcome,</h2>
+        <h1>Let us set you up</h1>
+      </ion-label>
+    </ion-item>
+  </section>
 
   <!-- Single Selection -->
-  <ion-item lines="none">
-    <ion-label>
-      <h3>Do you have Allergies?</h3>
-      <p>Onboarding for YES / NO question. Users can easily select a button.</p>
+  <section #section>
+    <ion-item lines="none">
+      <ion-label>
+        <h3>Do you have Allergies?</h3>
+        <p>Onboarding for YES / NO question. Users can easily select a button.</p>
 
-      <!-- flexible options-->
-      <ion-buttons class="single-selection">
-        <ion-button class="selected"> Yes </ion-button>
-        <ion-button> No </ion-button>
-        <ion-button> No </ion-button>
-        <ion-button> No </ion-button>
-        <ion-button> No </ion-button>
-      </ion-buttons>
-    </ion-label>
-  </ion-item>
+        <!-- flexible options-->
+        <ion-buttons class="single-selection">
+          <ion-button class="selected"> Yes </ion-button>
+          <ion-button> No </ion-button>
+          <ion-button> No </ion-button>
+          <ion-button> No </ion-button>
+          <ion-button> No </ion-button>
+        </ion-buttons>
+      </ion-label>
+    </ion-item>
+  </section>
 
   <!-- Multi selection with image and text-->
-  <ion-item lines="none">
-    <ion-label>
-      <h3>Select your favourite products</h3>
-      <p>To help us create better experience, please select one or more product.</p>
+  <section #section>
+    <ion-item lines="none">
+      <ion-label>
+        <h3>Select your favourite products</h3>
+        <p>To help us create better experience, please select one or more product.</p>
 
-      <ion-grid class="multi-selection">
-        <ion-row>
-          <!-- options -->
-          <ion-col size="4" button class="ion-activatable ripple-parent shadow">
-            <img src="../../assets/temp/tomato.jpg">
-            <ion-text>
-              Tomato
-            </ion-text>
+        <ion-grid class="multi-selection">
+          <ion-row>
+            <!-- options -->
+            <ion-col size="4" button class="ion-activatable ripple-parent shadow">
+              <img src="../../assets/temp/tomato.jpg">
+              <ion-text>
+                Tomato
+              </ion-text>
 
-            <ion-ripple-effect></ion-ripple-effect>
-          </ion-col>
+              <ion-ripple-effect></ion-ripple-effect>
+            </ion-col>
 
-          <ion-col size="4" button class="ion-activatable ripple-parent selected shadow">
-            <img src="../../assets/temp/16571.png">
-            <ion-text> Orange Juice asdasdsad</ion-text>
+            <ion-col size="4" button class="ion-activatable ripple-parent selected shadow">
+              <img src="../../assets/temp/16571.png">
+              <ion-text> Orange Juice asdasdsad</ion-text>
 
-            <ion-ripple-effect></ion-ripple-effect>
-          </ion-col>
+              <ion-ripple-effect></ion-ripple-effect>
+            </ion-col>
 
-          <ion-col size="4" class="ion-activatable ripple-parent selected shadow">
-            <img src="../../assets/temp/6739.png">
-            <ion-text> Apple</ion-text>
+            <ion-col size="4" class="ion-activatable ripple-parent selected shadow">
+              <img src="../../assets/temp/6739.png">
+              <ion-text> Apple</ion-text>
 
-            <ion-ripple-effect></ion-ripple-effect>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+              <ion-ripple-effect></ion-ripple-effect>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
 
-    </ion-label>
-  </ion-item>
+      </ion-label>
+    </ion-item>
+  </section>
 
   <!-- Multi selection with text only-->
-  <ion-item lines="none">
-    <ion-label>
-      <h3>Select your favourite products</h3>
-      <p>To help us create better experience, please select one or more product.</p>
+  <section #section>
+    <ion-item lines="none">
+      <ion-label>
+        <h3>Select your favourite products</h3>
+        <p>To help us create better experience, please select one or more product.</p>
 
-      <ion-buttons class="multi-selection-text-only">
-        <ion-button class="shadow shadow"> Tomoto </ion-button>
-        <ion-button class="shadow shadow"> Apple </ion-button>
-        <ion-button class="selected"> Orange </ion-button>
-        <ion-button class="shadow"> Painting </ion-button>
-        <ion-button class="shadow"> Sky Diving </ion-button>
-        <ion-button class="shadow"> Cheese </ion-button>
-        <ion-button class="shadow"> Eggplant </ion-button>
-        <ion-button class="selected shadow"> Chess </ion-button>
-      </ion-buttons>
-    </ion-label>
-  </ion-item>
-
-  <!-- Multi selection with text only and rounded corners-->
-  <ion-item lines="none">
-    <ion-label>
-      <h3>Select your favourite products</h3>
-      <p>To help us create better experience, please select one or more product.</p>
-
-      <ion-buttons class="multi-selection-text-only rounded">
-        <ion-button class="rounded border"> Tomoto </ion-button>
-        <ion-button class="rounded border"> Apple </ion-button>
-        <ion-button class="rounded selected border"> Orange </ion-button>
-        <ion-button class=" rounded border"> Painting </ion-button>
-        <ion-button class="rounded border"> Sky Diving </ion-button>
-        <ion-button class="rounded border"> Cheese </ion-button>
-        <ion-button class="rounded border"> Eggplant </ion-button>
-        <ion-button class="rounded border selected"> Chess </ion-button>
-      </ion-buttons>
-    </ion-label>
-  </ion-item>
+        <ion-buttons class="multi-selection-text-only">
+          <ion-button class="shadow shadow"> Tomoto </ion-button>
+          <ion-button class="shadow shadow"> Apple </ion-button>
+          <ion-button class="selected"> Orange </ion-button>
+          <ion-button class="shadow"> Painting </ion-button>
+          <ion-button class="shadow"> Sky Diving </ion-button>
+          <ion-button class="shadow"> Cheese </ion-button>
+          <ion-button class="shadow"> Eggplant </ion-button>
+          <ion-button class="selected shadow"> Chess </ion-button>
+        </ion-buttons>
+      </ion-label>
+    </ion-item>
+  </section>
 
   <!-- Multi selection with text only and rounded corners-->
-  <ion-item lines="none">
-    <ion-label>
-      <h3>Select your favourite products</h3>
-      <p>To help us create better experience, please select one or more product.</p>
+  <section #section>
+    <ion-item lines="none">
+      <ion-label>
+        <h3>Select your favourite products</h3>
+        <p>To help us create better experience, please select one or more product.</p>
 
-      <ion-buttons class="multi-selection-text-only rounded">
-        <ion-button class="rounded border half-radius"> Tomoto </ion-button>
-        <ion-button class="rounded border half-radius"> Apple </ion-button>
-        <ion-button class="rounded selected border half-radius"> Orange </ion-button>
-        <ion-button class=" rounded border half-radius"> Painting </ion-button>
-        <ion-button class="rounded border half-radius"> Sky Diving </ion-button>
-        <ion-button class="rounded border half-radius"> Cheese </ion-button>
-        <ion-button class="rounded border half-radius"> Eggplant </ion-button>
-        <ion-button class="rounded border selected half-radius"> Chess </ion-button>
-      </ion-buttons>
-    </ion-label>
-  </ion-item>
+        <ion-buttons class="multi-selection-text-only rounded">
+          <ion-button class="rounded border"> Tomoto </ion-button>
+          <ion-button class="rounded border"> Apple </ion-button>
+          <ion-button class="rounded selected border"> Orange </ion-button>
+          <ion-button class=" rounded border"> Painting </ion-button>
+          <ion-button class="rounded border"> Sky Diving </ion-button>
+          <ion-button class="rounded border"> Cheese </ion-button>
+          <ion-button class="rounded border"> Eggplant </ion-button>
+          <ion-button class="rounded border selected"> Chess </ion-button>
+        </ion-buttons>
+      </ion-label>
+    </ion-item>
+  </section>
+
+  <!-- Multi selection with text only and rounded corners-->
+  <section #section>
+    <ion-item lines="none">
+      <ion-label>
+        <h3>Select your favourite products</h3>
+        <p>To help us create better experience, please select one or more product.</p>
+
+        <ion-buttons class="multi-selection-text-only rounded">
+          <ion-button class="rounded border half-radius"> Tomoto </ion-button>
+          <ion-button class="rounded border half-radius"> Apple </ion-button>
+          <ion-button class="rounded selected border half-radius"> Orange </ion-button>
+          <ion-button class=" rounded border half-radius"> Painting </ion-button>
+          <ion-button class="rounded border half-radius"> Sky Diving </ion-button>
+          <ion-button class="rounded border half-radius"> Cheese </ion-button>
+          <ion-button class="rounded border half-radius"> Eggplant </ion-button>
+          <ion-button class="rounded border selected half-radius"> Chess </ion-button>
+        </ion-buttons>
+      </ion-label>
+    </ion-item>
+  </section>
 
   <!-- inputs -->
-  <ion-item lines="none">
-    <ion-label>
-      <h3>Tell us about you</h3>
-      <p>Please tell a bit about you so that we can personalize your onboarding experience</p>
-    </ion-label>
-  </ion-item>
+  <section #section>
+    <ion-item lines="none">
+      <ion-label>
+        <h3>Tell us about you</h3>
+        <p>Please tell a bit about you so that we can personalize your onboarding experience</p>
+      </ion-label>
+    </ion-item>
 
-  <ion-item lines="none">
-    <ion-label>
-      <ion-text><strong>You are looking for,</strong></ion-text>
+    <ion-item lines="none">
+      <ion-label>
+        <ion-text><strong>You are looking for,</strong></ion-text>
 
-      <ion-buttons class="multi-selection-text-only">
-        <ion-button class="rounded border half-radius large-button">
-          <img src="../../assets/temp/pen.svg">
-          <ion-text>Designs</ion-text>
-        </ion-button>
+        <ion-buttons class="multi-selection-text-only">
+          <ion-button class="rounded border half-radius large-button">
+            <img src="../../assets/temp/pen.svg">
+            <ion-text>Designs</ion-text>
+          </ion-button>
 
-        <ion-button class="rounded border half-radius large-button selected">
-          <img src="../../assets/temp/project.svg">
-          <ion-text>Projects</ion-text>
-        </ion-button>
-      </ion-buttons>
-    </ion-label>
-  </ion-item>
+          <ion-button class="rounded border half-radius large-button selected">
+            <img src="../../assets/temp/project.svg">
+            <ion-text>Projects</ion-text>
+          </ion-button>
+        </ion-buttons>
+      </ion-label>
+    </ion-item>
 
-  <ion-item lines="none">
-    <ion-label position="stacked"><strong>Full Name</strong></ion-label>
-    <ion-input ></ion-input>
-  </ion-item>
+    <ion-item lines="none">
+      <ion-label position="stacked"><strong>Full Name</strong></ion-label>
+      <ion-input></ion-input>
+    </ion-item>
 
-  <ion-item lines="none">
-    <ion-label position="stacked"><strong>Email</strong></ion-label>
-    <ion-input ></ion-input>
-  </ion-item>
+    <ion-item lines="none">
+      <ion-label position="stacked"><strong>Email</strong></ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+  </section>
 </ion-content>
 
 <ion-footer class="ion-no-border ion-padding">
-  <ion-buttons class="getStartedButton">
-    <ion-button>Get Started</ion-button>
+  <ion-buttons class="getStartedButton" [hidden]="firstIndex !== currentIndex">
+    <ion-button (click)="onNext()">Get Started</ion-button>
   </ion-buttons>
 
-  <ion-buttons>
-    <ion-button class="prev">Previous</ion-button>
-    <ion-button>Next</ion-button>
+  <ion-buttons [hidden]="firstIndex == currentIndex">
+    <ion-button class="prev" (click)="onPrevious()">Previous</ion-button>
+    <ion-button [hidden]="lastIndex == currentIndex" (click)="onNext()">Next</ion-button>
+
+    <ion-button [hidden]="lastIndex !== currentIndex" (click)="onNext()">Finish</ion-button>
   </ion-buttons>
 </ion-footer>

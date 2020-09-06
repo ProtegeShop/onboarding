@@ -211,5 +211,27 @@ ion-input {
     border-radius: 12px;
     min-height: 60px;
     margin-top: 16px;
-    padding: 16px!important;
+    padding: 16px !important;
+}
+
+// Animation
+section {
+    * {
+        animation: slideUP cubic-bezier(0.77, 0, 0.175, 1) 1s;
+    }
+}
+@keyframes slideUP {
+    0% {
+        transform: translate(0, 100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+* {
+    transition: 0.2s ease-in-out;
 }
